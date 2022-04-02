@@ -11,9 +11,6 @@ const UserRouter = require('./Routes/user')
 const AdminRouter = require('./Routes/admin')
 const db = require('./config/connection');
 
-
-
-
 const app = express()
 
 const PORT = process.env.PORT || 3000
@@ -27,7 +24,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.json());
 
 
-app.use('/api/v1/user/', UserRouter);
+app.use('/api/v1/user', UserRouter);
 app.use('/api/v1/admin/', AdminRouter);
 
 app.use(morgan('tiny'))
